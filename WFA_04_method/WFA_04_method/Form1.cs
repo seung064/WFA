@@ -36,13 +36,32 @@ namespace WFA_04_method
             int result = Add(100, num);
             */
 
+
+            /*
+                        int[] nums = Add(48, 8);
+                        // textBox1.Text = "몫 :" + nums[0].ToString() + "\r\n" + "나머지 : " + nums[1].ToString();
+                        textBox1.Text = "몫 : " + nums[0].ToString() + "\r\n";
+                        textBox1.Text += "나머지 : " + nums[1].ToString() + "\r\n";
+            */
+
+            string[,] data = new string[,] {
+                {"홍길동", "포도", "복숭아", "바나나"},
+                {"아무개", "사과", "수박", "오렌지"},
+                {"손오공", "바나나", "사과", "오렌지" }
+            };
+
+            data[0,3] = data[0,3].Replace("바나나", "바나나(유기농)").ToString();
+            data[2,1] = data[2,1].Replace("바나나", "바나나(유기농)").ToString();
+            data[,1] = data[2,1].Replace("바나나", "바나나(유기농)").ToString();
+            data[2,1] = data[2,1].Replace("바나나", "바나나(유기농)").ToString();
+            data[2,1] = data[2,1].Replace("바나나", "바나나(유기농)").ToString();
+            data[2,1] = data[2,1].Replace("바나나", "바나나(유기농)").ToString();
+            data[2,1] = data[2,1].Replace("바나나", "바나나(유기농)").ToString();
+            
            
+            
 
-            int[] nums = Add(48, 8);
-            // textBox1.Text = "몫 :" + nums[0].ToString() + "\r\n" + "나머지 : " + nums[1].ToString();
-            textBox1.Text = "몫 : " + nums[0].ToString() + "\r\n";
-            textBox1.Text += "나머지 : " + nums[1].ToString() + "\r\n";
-
+        textBox1.Text = data[0, 3] + ":" + data[0, 1] + "/";
 
 
 
@@ -83,7 +102,7 @@ namespace WFA_04_method
             textBox1.Text += "Nothing";
         }
         */
-
+/*
         int[] Add(int x, int y)
         {
             int divide = x / y;
@@ -91,7 +110,7 @@ namespace WFA_04_method
 
             return new int[] { divide, remainder };
         }
-
+*/
         
 
 
