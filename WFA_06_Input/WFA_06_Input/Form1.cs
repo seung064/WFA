@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace WFA_06_Input
 {
     public partial class Form1 : Form
@@ -17,10 +19,20 @@ namespace WFA_06_Input
         public Form1()
         {
             InitializeComponent();
-
-
-
         }
+        /*
+• 실습. if 문 에서 사용했던 동전던지기 함수를 사용자 입력을 받아서 처리
+1. C# WinForm RadioButton 사용 방법을 검색하여 학습
+2. 아래 이미지와 같이 true 또는 false 라디오 버튼을 추가
+3. textBox_input에 값을 입력하지 않아도 라디오 버튼의 상태에 따라
+true 또는 false 값이 입력되도록 처리
+4. 단, textBox_input에 입력된 문자열이 있다면 우선적으로 처리
+5. 사용자가 true 또는 false 이외의 값을 입력했다면 적당한 에러 메시지
+를 textBox_result에 출력
+6. Push 후 Repo. 링크를 슬랙 댓글로 제출
+*/
+
+
 
         #region #1-3 실습) 사용자 입력 받기 - 이벤트 처리
         private void button_input_Click(object sender, EventArgs e)
