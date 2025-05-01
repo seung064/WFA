@@ -18,6 +18,7 @@ namespace WFA_07_switch
 
             
         }
+        #region 실습 switch 문(요일)
         //사용자는 요일을 입력할 수 있음
 
 
@@ -44,9 +45,9 @@ namespace WFA_07_switch
         }
 
         //텍스트박스의 내용이 바뀔 때 발생하는 이벤트
-        private void textBox2_TextChanged(object sender, EventArgs e) 
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         // 버튼을 누를 때마다 발생하는 이벤트
@@ -74,31 +75,31 @@ namespace WFA_07_switch
             {
                 case weekday.월요일: // case + 열거형.값
                     message = "심근경색, 월요일 아침이 가장 위험! 출근을 안 해야...";
-            break;
+                    break;
 
                 case weekday.화요일:
                     message = "심근경색, 화요일 아침이 가장 위험! 출근을 안 해야...";
-            break;
+                    break;
 
                 case weekday.수요일:
                     message = "심근경색, 수요일 아침이 가장 위험! 출근을 안 해야...";
-            break;
+                    break;
 
                 case weekday.목요일:
                     message = "심근경색, 목요일 아침이 가장 위험! 출근을 안 해야...";
-            break;
+                    break;
 
                 case weekday.금요일:
                     message = "심근경색, 금요일 아침이 가장 위험! 출근을 안 해야...";
-            break;
+                    break;
 
                 case weekday.토요일:
                     message = "토요일, 자유다";
-            break;
+                    break;
 
                 case weekday.일요일:
                     message = "일요일, 월요병 벌써 온다";
-            break;
+                    break;
 
                 default:
                     message = "오류";
@@ -106,10 +107,88 @@ namespace WFA_07_switch
             }
 
             textBox_result.Text = message;
-
-
-
-
         }
+
+        /*
+
+
+enum week // 요일을 정의하는 열거형 / enum + 이름 / 이름은 하나의 자료형이 될 수 있음
+        {
+            월요일,
+            화요일,
+            수요일,
+            목요일,
+            금요일,
+            토요일,
+            일요일
+        }
+
+
+
+
+
+
+
+private void button_input2_Click(object sender, EventArgs e)
+        {
+            Week week = InputCheck(textBox_input.Text); // Week.Monday 반환.
+
+            switch (week)
+            {
+                case Week.Monday:
+                    textBox_result.Text = "심근경색, 월요일이 가장 위험, 출근은 안 해야..";
+                    break;
+                case Week.Tuesday:
+                    textBox_result.Text = "뭔가 모를 힘듦.";
+                    break;
+                case Week.Wednesday:
+                    textBox_result.Text = "시작이 반이다.. 반왔다.";
+                    break;
+                case Week.Thursday:
+                    textBox_result.Text = "금요일인 줄 착각했다가 억장 무너지는 날";
+                    break;
+                case Week.Friday:
+                    textBox_result.Text = "오늘은 신나는 기분이야 ╰(*°▽°*)╯";
+                    break;
+                case Week.Saturday:
+                    textBox_result.Text = "기분 최고조";
+                    break;
+                case Week.Sunday:
+                    textBox_result.Text = "현실 부정";
+                    break;
+                case Week.Error:
+                    textBox_result.Text = "요일이 뭔지 모르시나보군요?";
+                    break;
+            }
+        }
+
+        // 유효성 검사.
+        Week InputCheck(string message) // 내가 입력 input 글자.
+        {
+            switch (message)
+            {
+                case "월요일":
+                    return Week.Monday;
+                case "화요일":
+                    return Week.Tuesday;
+                case "수요일":
+                    return Week.Wednesday;
+                case "목요일":
+                    return Week.Thursday;
+                case "금요일":
+                    return Week.Friday;
+                case "토요일":
+                    return Week.Saturday;
+                case "일요일":
+                    return Week.Sunday;
+                default:
+                    return Week.Error;
+            }
+ */
+        #endregion
+
+
+
     }
 }
+

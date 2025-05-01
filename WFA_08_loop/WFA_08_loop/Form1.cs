@@ -193,6 +193,7 @@ namespace WFA_08_loop
                 Console.WriteLine(fruits2[i]);
             }
 
+            Console.WriteLine("------------------------------");
             // foreach 문 사용
             // 배열의 모든 항목(요소)을 "처음부터 끝까지 하나씩" 꺼내며 반복 실행하는 문법
             // 배열을 순회하면서 각 요소에 대해 "동일한 작업"을 수행할 때 사용
@@ -206,10 +207,12 @@ namespace WFA_08_loop
 
             //ex1) 위 예제 foreach 버전
             string[] fruits3 = { "사과", "바나나", "포도", "딸기" };
-            foreach (string fruit in fruits)
+            foreach (string fruit in fruits) // fruit라는 변수를 선언 + fruits의 값을 순서대로 받아옴
             {
                 Console.WriteLine(fruit);
               }
+
+            Console.WriteLine("------------------------------");
 
             //ex2) for문 버전
             int[] scores = { 85, 90, 78, 92, 88 }; // 배열크기는 5
@@ -246,23 +249,67 @@ namespace WFA_08_loop
            
 
         }
-        
 
+        /*
+        예제
 
-        private void button1_Click(object sender, EventArgs e)
+        • 가짜 성적표 만들기 
+        1. 학생수를 입력
+        2. 입력된 학생 수 만큼 0~100점 사이의 랜덤한 점수를 생성하고 각 학생
+        에게 점수를 할당
+        3. 학생의 이름은 “학생1”, “학생2”, ... 와 같이 숫자만 붙여서 표기
+        4. 모든 학생에 대해 “학생1의 점수: 42점” 과 같은 형태로 결과를 표시
+        • 이름과 성적을 입력하면 위와 같은 문자열을 만들어주는 함수를 작성하여 사용
+         */
+        //학생수 입력받음
+        private void button1_Click(object sender, EventArgs e) 
         {
+            //버튼을 누를때마다 폼 초기화
+            textBox_result.Text = ""; // 결과창 비우고 시작
 
-                   
-            }    
+            //난수 생성기(객체) 생성
+            Random rand = new Random();
+            int studentCount = 0; // 학생수 초기화
 
-          
+            // 입력값을 숫자로 변환
 
+            bool success = int.TryParse(textBox_input.Text, out studentCount);
 
+            if(success)
+            {
+                // 학생명 이라는 학생수 만큼의 배열공간
+                string[] studentNames = new string[studentCount];
 
+                // 학생 점수라는 학생수 만큼의 배열공간
+                int[] studentScore = new int[studentCount];
+
+                for(int i=0; i < studentCount; i++)
+                {
+                    // 학생 이름을 배열에 저장
+                    studentNames[i] = $"학생{i + 1}";
+                    // 학생 점수를 랜덤으로 생성하여 배열에 저장
+                    studentScore[i] = rand.Next(0, 101); // 0-100점 / rand.Next는
+                    // 결과 출력
+                    textBox_result.Text += $"{studentNames[i]}의 점수 : {studentScore[i]}점\r\n";
+                }
+            }
+            else
+            {
+                MessageBox.Show("숫자입력"); // 예외처리
+            }
 
 
 
         }
+
+
+
+
+
+
+
+
+    }
 
         /*
         해설
