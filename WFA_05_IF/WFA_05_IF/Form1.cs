@@ -15,7 +15,7 @@ namespace WFA_05_IF
         public Form1()
         {
             InitializeComponent();
-
+            #region ex)switch문
             /*
             • 동전 던지기(앞 면 또는 뒷 면) 함수를 작성
             1. 함수 이름을 적당하게 짓기
@@ -62,5 +62,6 @@ namespace WFA_05_IF
                 return true;
             }
         }
+        #endregion
     }
 }
